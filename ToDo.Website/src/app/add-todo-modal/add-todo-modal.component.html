@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+</div>
+<div class="modal-body" *ngIf="todoForm">
+  <form [formGroup]="todoForm!">
+    <div class=" form-group ">
+      <label for="todoTitle">Todo Title</label>
+      <input type="text" class="form-control" id="todoTitle" formControlName="todoTitle"
+             placeholder="Enter title">
+    </div>
+    <div class="form-group">
+      <label for="todoDescription">Description</label>
+      <textarea class="form-control" id="todoDescription" formControlName="todoDescription"
+                placeholder="Description"></textarea>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="saveTodo();">Save</button>
+</div>

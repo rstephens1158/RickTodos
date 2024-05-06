@@ -1,0 +1,14 @@
+<div class="card" *ngIf="todo">
+
+  <div class="card-header">{{ todo?.title }}</div>
+  <div class="card-body">
+    <div>id: {{ todo?.id }}</div>
+    <div>completed: {{ todo?.isComplete }}</div>
+    <div>description: {{ todo?.description }}</div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-primary" (click)="completeTodo(todo.id)" *ngIf="canComplete">Complete</button>
+  </div>
+</div>
+
+

@@ -1,0 +1,8 @@
+
+<h1>All todos in the system</h1>
+<p>This page should be server side rendered and can be viewed by anonymous people</p>
+<div class="row">
+  <div class="col-lg-3 mb-5 todo-item" app-todoitem [canComplete]="false" [todo]="todo" *ngFor="let todo of todos$ | async"></div>
+</div>
+
+

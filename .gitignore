@@ -1,0 +1,41 @@
+# .gitignore for Angular and C#
+
+# Node modules
+node_modules/
+
+# Angular build output
+/dist/
+/tmp/
+/out-tsc/
+
+# IDE and editor files
+*.sublime*
+*.idea/
+*.vscode/
+*.swp
+*.swo
+*.user
+*.userprefs
+*.users
+*.suo
+*.cache
+*.csproj.user
+
+# C# build outputs
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# Package files
+*.nupkg
+
+# Logs and databases
+*.log
+*.sqlite
+
+# OS generated files
+.DS_Store
+Thumbs.db
+*.angular/

@@ -1,0 +1,29 @@
+<h1>About the project</h1>
+
+<p>This is a todo app built with Angular, Node.js, and DotNetCore. It is slightly over architected on purpose</p>
+
+<h2>Tech Stack</h2>
+
+<p>Auth0 to handle registration, authorization and authentication.</p>
+
+<p>The site is hosted in Azure using two Linux App Services. The website itself is served from Node.js to support native
+  server side rendering. The All Todos page will server side render anonymously.</p>
+<p>The data is stored in MongoDb. MongoDb was chosen over CosmosDb because MongoDb support cross collection
+  transactional consistency.  The Azure version of MongoDb also does not support cross collection transactions, so this uses a MongoDb Atlas instance</p>
+<p>Azure Devops is used for CI/CD</p>
+<p>The API is built with DotNetCore. The API is hosted in a separate App Service to the website. The API is secured with
+  Auth0.</p>
+<p>nServiceBus with Azure Service Bus is used in the event that we decide to add any asynchronous processing. Maybe
+  we'll add a due date, and when we're past the due date, we'll use the service bus to trigger a message to nag the
+  user.</p>
+<p>Repository and UnitOfWork patterns are used on the backend. Code depends on interfaces.</p>
+
+<h3>Todo</h3>
+<ul>
+  <li>Clean up DI registration</li>
+  <li>Implement a due date</li>
+  <li>Implement a reminder</li>
+  <li>Implement Stripe payment plan when registering</li>
+  <li>Implement a user profile page</li>
+</ul>
+

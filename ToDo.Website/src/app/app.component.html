@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      Rick's Todos
+    </a>
+    <!-- Hamburger button -->
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collapsible content -->
+    <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarResponsive">
+      <ul ngbNav class="navbar-nav ms-auto"> <!-- ms-auto to push content to the right -->
+        <li class="nav-item" ngbNavItem><a class="nav-link" ngbNavLink routerLink="/">Home</a></li>
+        <li class="nav-item" ngbNavItem><a class="nav-link" ngbNavLink routerLink="/alltodos">All Todos</a></li>
+        <li class="nav-item" ngbNavItem><a class="nav-link" ngbNavLink routerLink="/todos">My Todos</a></li>
+        <li class="nav-item" ngbNavItem><app-auth-button></app-auth-button></li>
+      </ul>
+      <app-user-profile *ngIf="auth.isAuthenticated$ | async" class="ms-3"></app-user-profile>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
